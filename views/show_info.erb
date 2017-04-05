@@ -24,7 +24,7 @@
   </head>
   <body>
       <div class="panel panel-success">
-        <div class="panel-heading"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Employee List</div>
+        <div class="panel-heading"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Employee Info</div>
 
     <table class="table">
       <tbody>
@@ -37,22 +37,22 @@
         <th>Slack</th>
         <th>GitHub</th
       </tr>
-      <% @employees.each do |employee| %>
         <tr>
-          <td><a href="/edit_employee?id=<%= employee['id'] %>">
-          <%= employee["name"] %></a></td>
-          <td><%= employee["phone"] %></td>
-          <td><%= employee["address"]%></td>
-          <td><%= employee["position"]%></td>
-          <td><%= employee["salary"] %></td>
-          <td><%= employee["slack"]%></td>
-          <td><%= employee["github"]%></td>
+          <td><a href="/edit_employee?id=<%= @employee.id %>">
+          <%= @employee.name %></a></td>
+          <td><%= @employee.phone %></td>
+          <td><%= @employee.address%></td>
+          <td><%= @employee.position%></td>
+          <td><%= @employee.salary %></td>
+          <td><%= @employee.slack%></td>
+          <td><%= @employee.github%></td>
         </tr>
-      <% end %>
 
     </tbody>
   </table>
 </div>
+  <a class="btn btn-danger" href="/delete?id=<%= @employee.id %>"role="button"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>  Delete Employee</a>
+
 
 
 
